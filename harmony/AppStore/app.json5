@@ -1,0 +1,10 @@
+{
+  "app": {
+    "bundleName": "com.colorpad.argyll",
+    "vendor": "OpenICC",
+    "versionCode": 1,
+    "versionName": "0.1.0",
+    "icon": "$media:app_icon",
+    "label": "$string:app_name"
+  }
+}
