@@ -1,0 +1,5 @@
+"requestPermissions": [
+  {
+    "name": "ohos.permission.USB_DEVICE_ATTACHED"
+  }
+]
