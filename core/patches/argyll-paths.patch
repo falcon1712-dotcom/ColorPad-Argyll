@@ -1,0 +1,14 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 1234567..abcdefg 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -50,6 +50,9 @@ set(CMAKE_C_STANDARD 99)
+ set(CMAKE_C_STANDARD_REQUIRED ON)
+ set(CMAKE_C_EXTENSIONS OFF)
+ 
++# HarmonyOS: static linking only
++set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static")
++
+ # Find required libs
+ find_package(PkgConfig REQUIRED)
+ pkg_check_modules(LIBUSB REQUIRED libusb-1.0>=1.0.16)

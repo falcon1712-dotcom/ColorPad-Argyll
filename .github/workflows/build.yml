@@ -1,0 +1,29 @@
+name: Build Argyll for HarmonyOS
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup HarmonyOS SDK
+        run: |
+          wget https://download-url.ohos.sdk/ohos-sdk-linux.tar.gz
+          tar -xzf ohos-sdk-linux.tar.gz -C $HOME
+
+      - name: Build binaries
+        env:
+          OHOS_SDK_ROOT: $HOME/ohos-sdk
+        run: bash scripts/ci-build.sh
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: argyll-binaries-ohos-arm64
+          path: argyll-binaries-ohos-arm64.zip

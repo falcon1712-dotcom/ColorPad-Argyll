@@ -1,0 +1,13 @@
+diff --git a/libusb/os/linux_usbfs.c b/libusb/os/linux_usbfs.c
+index 1234567..abcdefg 100644
+--- a/libusb/os/linux_usbfs.c
++++ b/libusb/os/linux_usbfs.c
+@@ -200,7 +200,7 @@ static int usbfs_detach_kernel_driver(struct libusb_device_handle *handle,
+ {
+ 	int r;
+ 
+-#if defined(__ANDROID__) || defined(__OHOS__)
++#if defined(__ANDROID__)
+ 	/* HarmonyOS does not support ioctl USBFS_DISCONNECT_CLAIM */
+ 	r = -1;
+ #else
